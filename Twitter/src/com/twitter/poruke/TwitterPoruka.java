@@ -1,10 +1,10 @@
 package com.twitter.poruke;
 
 /**
- * Ova klasa predstavlja twitter poruku nekog korisnika
+ * Ova klasa predstavlja Twitter poruku nekog korisnika
  * 
  * @author Milan Susa
- * @version V1.0
+ * @version V1.1
  */
 public class TwitterPoruka {
 
@@ -32,7 +32,8 @@ public class TwitterPoruka {
 	 * 
 	 * @param korisnik
 	 *            (Obelezava korisnika koji se unosi)
-	 * @throws java.lang.RuntimeException.class
+	 * @throws java.lang.RuntimeException
+	 *             (Ime korisnika mora biti uneto)
 	 */
 	public void setKorisnik(String korisnik) {
 		if (korisnik == null || korisnik.isEmpty())
@@ -54,7 +55,8 @@ public class TwitterPoruka {
 	 * 
 	 * @param poruka
 	 *            (Obelezava poruku koja se unosi)
-	 * @throws java.lang.RuntimeException.class
+	 * @throws java.lang.RuntimeException
+	 *             (Poruka mora biti uneta i mora imati najvise 140 znakova)
 	 */
 	public void setPoruka(String poruka) {
 		if (poruka == null || poruka.isEmpty() || poruka.length() > 140)
