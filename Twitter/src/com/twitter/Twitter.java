@@ -7,7 +7,7 @@ import com.twitter.poruke.TwitterPoruka;
  * Ova klasa predstavlja Twitter servis
  * 
  * @author Milan Susa
- * @version V1.0
+ * @version V1.1
  */
 public class Twitter {
 
@@ -36,7 +36,7 @@ public class Twitter {
 	public void unesi(String korisnik, String poruka) {
 		// Pravi se nova poruka i puni podacima.
 		TwitterPoruka tp = new TwitterPoruka();
-		tp.setKorisnik("korisnik");
+		tp.setKorisnik(korisnik);
 		tp.setPoruka(poruka);
 		// Poruka se unosi u listu na kraj
 		poruke.addLast(tp);
@@ -50,6 +50,8 @@ public class Twitter {
 	 * @param tag
 	 *            (Obelezava identifikator za nalazenje zeljenih poruka)
 	 * @return rezultat (Lista odredjenog broja poruka sa odredjenim tagom)
+	 * @throws java.lang.RuntimeException
+	 *             (Tag mora biti unesen)
 	 */
 	public TwitterPoruka[] vratiPoruke(int maxBroj, String tag) {
 		if (tag == null || tag.isEmpty())
@@ -66,13 +68,16 @@ public class Twitter {
 		// Ako se nadje neka takva, i ako nije prekoracen maxBroj
 		// ona se upisuje u niz. Ako je prekoracen maxBroj,pretraga
 		// se prekida.
-		for (int i = 0; i < poruke.size(); i++)
-			if (poruke.get(i).getPoruka().indexOf(tag) != -1)
+		for (int i = 0; i < poruke.size(); i++) {
+			if (poruke.get(i).getPoruka().indexOf(tag) != -1) {
 				if (brojac < maxBroj) {
-					rezultat[brojac + 1] = poruke.get(i);
+					rezultat[brojac] = poruke.get(i);
 					brojac++;
-				} else
+				} else {
 					break;
+				}
+			}
+		}
 		return rezultat;
 	}
 }

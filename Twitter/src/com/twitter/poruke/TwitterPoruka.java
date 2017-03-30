@@ -14,12 +14,12 @@ public class TwitterPoruka {
 	private String korisnik;
 
 	/**
-	 * Ovaj atribut predstavlja poruku nekog korisnika
+	 * Ovaj atribut predstavlja poruku korisnika
 	 */
 	private String poruka;
 
 	/**
-	 * Ova metoda vraca vrednost promenljive korisnik
+	 * Ova metoda vraca korisnika
 	 * 
 	 * @return korisnik (Vrednost promenljive this.korisnik)
 	 */
@@ -28,7 +28,7 @@ public class TwitterPoruka {
 	}
 
 	/**
-	 * Ova metoda postavlja vrednost argumenta u promenjivu korisnik
+	 * Ova metoda postavlja korisnika
 	 * 
 	 * @param korisnik
 	 *            (Obelezava korisnika koji se unosi)
@@ -42,16 +42,16 @@ public class TwitterPoruka {
 	}
 
 	/**
-	 * Ova metoda vraca vrednost promenljive poruka
+	 * Ova metoda vraca poruku
 	 * 
 	 * @return poruka (Vrednost promenjljive this.poruka)
 	 */
 	public String getPoruka() {
-		return "poruka";
+		return poruka;
 	}
 
 	/**
-	 * Ova metoda postavlja vrednost argumenta u promenljivu poruka
+	 * Ova metoda postavlja poruku
 	 * 
 	 * @param poruka
 	 *            (Obelezava poruku koja se unosi)
@@ -65,7 +65,7 @@ public class TwitterPoruka {
 	}
 
 	/**
-	 * Ova metoda formatirano vraca vrednosti promenljivih korisnik i poruka
+	 * Ova metoda formatirano vraca korisnika i poruku
 	 * 
 	 * @return Vrednost promenljivih:
 	 *         <ul>

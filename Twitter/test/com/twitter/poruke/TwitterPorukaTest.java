@@ -45,8 +45,8 @@ public class TwitterPorukaTest {
 
 	@Test(expected = java.lang.RuntimeException.class)
 	public void testSetPorukaDugacakString() {
-		tp.setPoruka("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" + "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-				+ "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" + "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+		tp.setPoruka("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+				+ "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
 				+ "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
 		assertEquals(java.lang.RuntimeException.class, tp.getPoruka());
 	}
