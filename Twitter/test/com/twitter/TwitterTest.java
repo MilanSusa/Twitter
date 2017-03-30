@@ -50,25 +50,21 @@ public class TwitterTest {
 	@Test(expected = java.lang.RuntimeException.class)
 	public void testUnesiNullKorisnik() {
 		t.unesi(null, "Danas je lep dan");
-		assertEquals(java.lang.RuntimeException.class, t.vratiSvePoruke().getLast().toString());
 	}
 
 	@Test(expected = java.lang.RuntimeException.class)
 	public void testUnesiPrazanStringKorisnik() {
 		t.unesi("", "Danas je lep dan");
-		assertEquals(java.lang.RuntimeException.class, t.vratiSvePoruke().getLast().toString());
 	}
 
 	@Test(expected = java.lang.RuntimeException.class)
 	public void testUnesiNullPoruka() {
 		t.unesi("Mita", null);
-		assertEquals(java.lang.RuntimeException.class, t.vratiSvePoruke().getLast().toString());
 	}
 
 	@Test(expected = java.lang.RuntimeException.class)
 	public void testUnesiPrazanStringpPoruka() {
 		t.unesi("Mita", "");
-		assertEquals(java.lang.RuntimeException.class, t.vratiSvePoruke().getLast().toString());
 	}
 
 	@Test

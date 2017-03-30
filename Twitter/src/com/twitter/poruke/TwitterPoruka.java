@@ -21,7 +21,7 @@ public class TwitterPoruka {
 	/**
 	 * Ova metoda vraca korisnika
 	 * 
-	 * @return korisnik (Vrednost promenljive this.korisnik)
+	 * @return korisnik (Vrednost promenljive korisnik)
 	 */
 	public String getKorisnik() {
 		return korisnik;
@@ -44,7 +44,7 @@ public class TwitterPoruka {
 	/**
 	 * Ova metoda vraca poruku
 	 * 
-	 * @return poruka (Vrednost promenjljive this.poruka)
+	 * @return poruka (Vrednost promenjljive poruka)
 	 */
 	public String getPoruka() {
 		return poruka;
@@ -69,8 +69,8 @@ public class TwitterPoruka {
 	 * 
 	 * @return Vrednost promenljivih:
 	 *         <ul>
-	 *         <li>this.korisnik</li>
-	 *         <li>this.poruka</li>
+	 *         <li>korisnik</li>
+	 *         <li>poruka</li>
 	 *         </ul>
 	 */
 	public String toString() {

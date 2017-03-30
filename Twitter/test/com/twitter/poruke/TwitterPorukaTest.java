@@ -22,25 +22,21 @@ public class TwitterPorukaTest {
 	@Test(expected = java.lang.RuntimeException.class)
 	public void testSetKorisnikNull() {
 		tp.setKorisnik(null);
-		assertEquals(java.lang.RuntimeException.class, tp.getKorisnik());
 	}
 
 	@Test(expected = java.lang.RuntimeException.class)
 	public void testSetKorisnikPrazanString() {
 		tp.setKorisnik("");
-		assertEquals(java.lang.RuntimeException.class, tp.getKorisnik());
 	}
 
 	@Test(expected = java.lang.RuntimeException.class)
 	public void testSetPorukaNull() {
 		tp.setPoruka(null);
-		assertEquals(java.lang.RuntimeException.class, tp.getPoruka());
 	}
 
 	@Test(expected = java.lang.RuntimeException.class)
 	public void testSetPorukaPrazanString() {
 		tp.setPoruka("");
-		assertEquals(java.lang.RuntimeException.class, tp.getPoruka());
 	}
 
 	@Test(expected = java.lang.RuntimeException.class)
@@ -48,7 +44,6 @@ public class TwitterPorukaTest {
 		tp.setPoruka("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
 				+ "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
 				+ "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-		assertEquals(java.lang.RuntimeException.class, tp.getPoruka());
 	}
 
 	@Test
