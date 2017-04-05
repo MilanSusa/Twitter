@@ -19,6 +19,18 @@ public class TwitterPorukaTest {
 	public void tearDown() throws Exception {
 	}
 
+	@Test
+	public void testSetKorisnik() {
+		tp.setKorisnik("Mita");
+		assertEquals("Mita", tp.getKorisnik());
+	}
+
+	@Test
+	public void testSetPoruka() {
+		tp.setPoruka("Danas je lep dan");
+		assertEquals("Danas je lep dan", tp.getPoruka());
+	}
+
 	@Test(expected = java.lang.RuntimeException.class)
 	public void testSetKorisnikNull() {
 		tp.setKorisnik(null);

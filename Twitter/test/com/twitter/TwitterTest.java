@@ -67,8 +67,18 @@ public class TwitterTest {
 		t.unesi("Mita", "");
 	}
 
+	@Test(expected = java.lang.RuntimeException.class)
+	public void testVratiPorukeNullTag() {
+		t.vratiPoruke(5, null);
+	}
+
+	@Test(expected = java.lang.RuntimeException.class)
+	public void testVratiPorukePrazanTag() {
+		t.vratiPoruke(5, "");
+	}
+
 	@Test
-	public void testVratiPoruke() {
+	public void testVratiPorukeSaTagomDanas() {
 		tagovanePoruke = new TwitterPoruka[3];
 		TwitterPoruka tp1 = new TwitterPoruka();
 		TwitterPoruka tp2 = new TwitterPoruka();
@@ -86,5 +96,44 @@ public class TwitterTest {
 		t.unesi("Pera", "Danas je suncan dan");
 		t.unesi("Zika", "Danas je vedar dan");
 		assertEquals(Arrays.toString(tagovanePoruke), Arrays.toString(t.vratiPoruke(3, "Danas")));
+	}
+
+	@Test
+	public void testVratiPorukeSaTagomNije() {
+		tagovanePoruke = new TwitterPoruka[2];
+		TwitterPoruka tp1 = new TwitterPoruka();
+		TwitterPoruka tp2 = new TwitterPoruka();
+		tp1.setKorisnik("Mika");
+		tp1.setPoruka("Danas nije lep dan");
+		tp2.setKorisnik("Zika");
+		tp2.setPoruka("Danas nije vedar dan");
+		tagovanePoruke[0] = tp1;
+		tagovanePoruke[1] = tp2;
+		t.unesi("Mika", "Danas nije lep dan");
+		t.unesi("Pera", "Danas je suncan dan");
+		t.unesi("Zika", "Danas nije vedar dan");
+		assertEquals(Arrays.toString(tagovanePoruke), Arrays.toString(t.vratiPoruke(2, "nije")));
+	}
+
+	@Test
+	public void testVratiPorukeSaTagomSuncan() {
+		tagovanePoruke = new TwitterPoruka[1];
+		TwitterPoruka tp1 = new TwitterPoruka();
+		tp1.setKorisnik("Pera");
+		tp1.setPoruka("Danas je suncan dan");
+		tagovanePoruke[0] = tp1;
+		t.unesi("Mika", "Danas je lep dan");
+		t.unesi("Pera", "Danas je suncan dan");
+		t.unesi("Zika", "Danas je vedar dan");
+		assertEquals(Arrays.toString(tagovanePoruke), Arrays.toString(t.vratiPoruke(1, "suncan")));
+	}
+
+	@Test
+	public void testVratiPorukeSaTagomNoc() {
+		tagovanePoruke = new TwitterPoruka[100];
+		t.unesi("Mika", "Danas je lep dan");
+		t.unesi("Pera", "Danas je suncan dan");
+		t.unesi("Zika", "Danas je vedar dan");
+		assertEquals(Arrays.toString(tagovanePoruke), Arrays.toString(t.vratiPoruke(0, "noc")));
 	}
 }
