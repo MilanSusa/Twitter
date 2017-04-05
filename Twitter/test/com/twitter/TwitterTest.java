@@ -136,4 +136,21 @@ public class TwitterTest {
 		t.unesi("Zika", "Danas je vedar dan");
 		assertEquals(Arrays.toString(tagovanePoruke), Arrays.toString(t.vratiPoruke(0, "noc")));
 	}
+
+	@Test
+	public void testVratiPorukeMaxDve() {
+		tagovanePoruke = new TwitterPoruka[2];
+		TwitterPoruka tp1 = new TwitterPoruka();
+		TwitterPoruka tp2 = new TwitterPoruka();
+		tp1.setKorisnik("Mika");
+		tp1.setPoruka("Danas je lep dan");
+		tp2.setKorisnik("Pera");
+		tp2.setPoruka("Danas je suncan dan");
+		tagovanePoruke[0] = tp1;
+		tagovanePoruke[1] = tp2;
+		t.unesi("Mika", "Danas je lep dan");
+		t.unesi("Pera", "Danas je suncan dan");
+		t.unesi("Zika", "Danas je vedar dan");
+		assertEquals(Arrays.toString(tagovanePoruke), Arrays.toString(t.vratiPoruke(2, "dan")));
+	}
 }
